@@ -1,24 +1,19 @@
 {
-  "name": "mvp-project",
+  "name": "mean",
   "version": "1.0.0",
-  "description": "MEAN stack todo list app",
-  "main": "app.js",
+  "description": "mean stack practice",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test",
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AntonBowden/MVP-project.git"
-  },
-  "author": "Anton Bowden",
+  "author": "Anton",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AntonBowden/MVP-project/issues"
-  },
-  "homepage": "https://github.com/AntonBowden/MVP-project#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "method-override": "^2.3.8",
+    "mongodb": "^2.2.26",
     "mongoose": "^4.9.7",
     "morgan": "^1.8.1"
   }
