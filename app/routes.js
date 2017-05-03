@@ -11,7 +11,7 @@ module.exports = function(app) {
     });
   });
 
-  // create a task and get the task list after creation
+
   app.post("/api/tasks", function(req, res) {
     // create a task
     Task.create(
@@ -30,7 +30,27 @@ module.exports = function(app) {
     );
   });
 
-  // delete a task
+    app.put("/api/tasks/:task_id", function(req, res) {
+      console.log('>>> TICKED ', req.params.task_id);
+    Task.update(
+      {
+        _id: req.params.task_id
+      },
+      { $set: { done: true }},
+      function(err, task) {
+        if (err) res.send(err);
+
+
+        Task.find(function(err, tasks) {
+          if (err) res.send(err);
+          res.json(tasks);
+        });
+      }
+    );
+  });
+
+
+
   app.delete("/api/tasks/:task_id", function(req, res) {
     Task.remove(
       {
@@ -47,6 +67,29 @@ module.exports = function(app) {
       }
     );
   });
+
+
+  app.delete("/api/tasks/", function(req, res) {
+    Task.remove(
+      {
+        done: true
+      },
+      function(err, task) {
+        if (err) res.send(err);
+
+        // get the task list after deletion
+        Task.find(function(err, tasks) {
+          if (err) res.send(err);
+          res.json(tasks);
+        });
+      }
+    );
+  });
+
+
+
+
+
 
   // application -----------------------------
   // the default route that serves the index.html
