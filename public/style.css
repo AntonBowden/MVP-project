@@ -1,0 +1,82 @@
+.jumbotron {
+  padding: 100px 25px;
+  box-shadow: 0px 1px 55px black;
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-family: 'Cabin Condensed', sans-serif;
+}
+
+.label-info {
+  border-radius: 0;
+}
+
+.container-fluid {
+  padding: 60px 50px;
+}
+
+input {
+  font-family: 'Rock Salt', cursive;
+}
+
+.form-control {
+  color: navy;
+}
+
+.finished {
+  text-decoration: line-through;
+  text-decoration-style: solid;
+  color: crimson;
+}
+
+.strikeout {
+  font-size: 4em;
+  line-height: 1em;
+  position: relative;
+}
+
+.strikeout::after {
+  border-bottom: 0.125em solid red;
+  content: "";
+  left: 0;
+  margin-top: calc(0.125em / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.input-group {
+  margin: 10px 0;
+}
+
+.add-task-group {
+  margin-bottom: 30px;
+}
+
+.btn-clear-group {
+  margin-top: 30px;
+  text-align: right;
+}
+
+.btn-clear {
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size: 1.5em;
+  box-shadow: 0px 5px 25px -5px black;
+}
+
+.state-icon {
+  left: -5px;
+}
+
+.list-group-item-primary {
+  color: rgb(255, 255, 255);
+  background-color: rgb(66, 139, 202);
+}
+
+
+/* DEMO ONLY - REMOVES UNWANTED MARGIN */
+
+.well .list-group {
+  margin-bottom: 0px;
+}
