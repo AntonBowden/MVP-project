@@ -1,14 +1,18 @@
 {
-  "name": "mean",
+  "name": "mvp-project",
   "version": "1.0.0",
-  "description": "mean stack practice",
+  "description": "MEAN stack todo list app",
   "main": "server.js",
   "scripts": {
     "test": "test",
     "start": "node server.js"
   },
-  "author": "Anton",
+  "author": "Anton Bowden",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonBowden/MVP-project/issues"
+  },
+  "homepage": "https://github.com/AntonBowden/MVP-project#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",

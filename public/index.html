@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tasks@hand</title>
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed|Rock+Salt" rel="stylesheet">
+  <link rel="stylesheet" href="http://bootswatch.com/superhero/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script src="app.js"></script>
+
+</head>
+
+<body ng-app="taskList" ng-controller="MainCtrl">
+
+
+  <div class="jumbotron text-center">
+    <h1>tasks@hand: <span class="label label-info">{{ tasks.length }}</span></h1>
+  </div>
+
+  <div class='container'>
+
+    <!-- FORM TO CREATE TASKS -->
+    <div class="add-task-group input-group input-group-lg">
+
+      <input placeholder="New Task" class="form-control" type="text" ng-model="formData.text">
+      <span class="input-group-btn">
+          <button ng-click="createTask()" class="btn btn-success" type="button">
+            <i class="glyphicon glyphicon-plus"></i>
+          </button>
+        </span>
+    </div>
+
+    <div class="input-group input-group-lg" ng-repeat="task in tasks">
+      <span class="input-group-addon">
+          <input type="checkbox" ng-click="crossTask(task._id)" ng-model="task.done"> <!-- CHECKBOX -->
+      </span>
+      <input ng-class="{finished: task.done}" class="form-control" type="text" ng-model="task.text">
+      <span class="input-group-btn">
+          <button ng-click="deleteTask(task._id)" class="btn btn-primary" type="button"> <!-- DELETE -->
+            <i class="glyphicon glyphicon-remove"></i>
+          </button>
+        </span>
+    </div>
+
+    <div class="btn-clear-group">
+      <button ng-click="clearCompleted()" class="btn btn-danger btn-lg btn-clear">clear completed</button>
+    </div>
+
+  </div>
+</body>
+
+</html>
